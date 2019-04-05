@@ -1,0 +1,15 @@
+div.rt-th {
+    div {
+        display:flex;
+        th { margin: 0 auto; }
+    }
+}
+div > td.faucet-status {
+    display: flex;
+    justify-content: center;
+    td.faucet-status {
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+
