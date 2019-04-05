@@ -2,7 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
   mode: "development",
   module: {
     rules: [
@@ -15,10 +15,19 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
+      },
+      { 
+        test: /\.tsx?$/, 
+        loader: "awesome-typescript-loader" 
+      }, // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      { 
+        enforce: "pre", 
+        test: /\.js$/, 
+        loader: "source-map-loader" 
       }
     ]
   },
-  resolve: { extensions: ["*", ".js", ".jsx"] },
+  resolve: { extensions: ["*", ".js", ".jsx", ".ts", ".tsx", ".json"] },
   output: {
     path: path.resolve(__dirname, "dist/"),
     publicPath: "/dist/",

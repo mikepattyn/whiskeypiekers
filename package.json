@@ -2,7 +2,7 @@
   "name": "himpiesfaucetcollector",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "start": "webpack-dev-server --mode development"
   },
@@ -13,6 +13,9 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "@types/node": "^11.13.0",
+    "@types/react": "^16.8.12",
+    "@types/react-dom": "^16.8.3",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.5",
     "css-loader": "^1.0.1",
