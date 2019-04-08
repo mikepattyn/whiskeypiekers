@@ -9,3 +9,12 @@ Container component:
     The container component also specifies behavior. If the presentational component has any interactivity — 
         like a button — it calls a prop-function given to it by the container component. 
     The container component is the one to dispatch an action to the Redux store
+
+Redux store:
+    From the very beginning, we need to stress that Redux has no relation to React. 
+    You can write Redux apps with React, Angular, Ember, jQuery, or vanilla JavaScript.
+    That said, Redux works especially well with libraries like React and Deku because they
+    let you describe UI as a function of state, and Redux emits state updates in response to actions.
+
+Tutorial for implementing Redux and with React and use the components:
+    https://redux.js.org/basics/usage-with-react
