@@ -2,13 +2,9 @@ import { IAppState } from "../../Stores/Store";
 import * as React from "react";
 import { connect } from "react-redux";
 import { CharacterPresentationalComponent } from "../Presentationals/CharacterPresentational";
-var testje = {}
 const mapStateToProps = (state: IAppState) => {
-    testje = {
-        characters: state.characterState.characters,
-    };
     return {
-        characters: testje,
+        characters: state.characterState.characters,
     };
 };
 
@@ -19,7 +15,7 @@ export class CharacterContainerComponent extends React.Component {
     }
     render() {
         return (
-            <CharacterPresentationalComponent characters={testje} />
+            <CharacterPresentationalComponent characters={this.props} />
         );
     }
 }
