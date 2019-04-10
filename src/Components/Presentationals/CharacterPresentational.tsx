@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 export const CharacterPresentationalComponent = (props: any) => {
-    const characters = props.characters
+    const characters = props
     return (
         <>
             <div className="name-container">
