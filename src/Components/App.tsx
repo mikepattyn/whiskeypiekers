@@ -1,6 +1,6 @@
 import * as React from "react";
 import './App.scss';
-import  CharacterContainerComponent from "./Containers/CharacterContainer";
+import  CharacterContainerComponent from "./Character/CharacterContainer";
 export interface AppProps { compiler: string; framework: string; programmer: string; }
 
 const App: React.SFC<{}> = () => {

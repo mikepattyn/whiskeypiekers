@@ -12,7 +12,7 @@ import { Store } from 'redux';
 
 // Import the store function and state
 import configureStore, { IAppState } from './Stores/Store';
-import { getAllCharacters } from './Components/Actions/CharacterActions';
+import { getAllCharacters } from './Components/Character/CharacterActions';
 
 import App from "./Components/App";
 // End of component imports

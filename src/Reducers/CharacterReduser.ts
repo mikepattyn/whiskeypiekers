@@ -4,7 +4,7 @@ import { Reducer } from 'redux';
 import {
   CharacterActions,
   CharacterActionTypes,
-} from './Components/Actions/CharacterActions';
+} from '../Components/Character/CharacterActions';
 
 // Define the Character type
 export interface ICharacter {
@@ -36,7 +36,7 @@ const initialCharacterState: ICharacterState = {
   characters: [],
 };
 
-export const characterReducer: Reducer<ICharacterState, CharacterActions> = (
+export const CharacterReducer: Reducer<ICharacterState, CharacterActions> = (
   state = initialCharacterState,
   action
 ) => {

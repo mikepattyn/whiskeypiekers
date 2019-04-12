@@ -1,7 +1,7 @@
 import { IAppState } from "../../Stores/Store";
 import * as React from "react";
 import { connect } from "react-redux";
-import CharacterPresentationalComponent from "../Presentationals/CharacterPresentational";
+import CharacterPresentationalComponent from "./CharacterPresentational";
 
 const mapStateToProps = (state: IAppState) => {
     return {
