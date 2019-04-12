@@ -1,7 +1,8 @@
 import { IAppState } from "../../Stores/Store";
 import * as React from "react";
 import { connect } from "react-redux";
-import { CharacterPresentationalComponent } from "../Presentationals/CharacterPresentational";
+import CharacterPresentationalComponent from "../Presentationals/CharacterPresentational";
+
 const mapStateToProps = (state: IAppState) => {
     return {
         characters: state.characterState.characters,
@@ -9,14 +10,12 @@ const mapStateToProps = (state: IAppState) => {
 };
 
 
-export class CharacterContainerComponent extends React.Component {
-    constructor(props: any){
-        super(props);
-    }
+class CharacterContainerComponent extends CharacterPresentationalComponent {
     render() {
         return (
-            <CharacterPresentationalComponent characters={this.props} />
+            <CharacterPresentationalComponent characters={this.state} />
         );
     }
 }
-export default connect(mapStateToProps)
+export default connect(mapStateToProps)(CharacterContainerComponent)
+
