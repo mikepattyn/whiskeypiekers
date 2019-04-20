@@ -5,7 +5,7 @@ import CharacterPresentationalComponent from "./CharacterPresentational";
 
 const mapStateToProps = (state: IAppState) => {
     return {
-        characters: state.characterState.characters,
+        characters: state.characterState.characters
     };
 };
 

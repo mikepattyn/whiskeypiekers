@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@types/react-redux": "^7.0.6",
+    "@types/react-router-dom": "^4.3.2",
     "@types/react-table": "^6.8.0",
     "axios": "^0.18.0",
     "node-sass": "^4.11.0",
@@ -35,9 +36,11 @@
     "react-dom": "^16.8.6",
     "react-hot-loader": "^4.8.2",
     "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
     "react-table": "^6.9.2",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
+    "rxjs": "^6.4.0",
     "sass-loader": "^7.1.0"
   }
 }

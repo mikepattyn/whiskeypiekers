@@ -21,11 +21,24 @@
 .tableHeaderTitle {
     text-align: center;
 }
-.tableHeaderRow {
-
-    .tableHeader{
+#tableBody {
+    
+}
+.headerBox {
+    display: flex;
+    .headerName {
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 0.9em;
     }
+    .headerImage {
+
+    }
 }
+
+
+@media only screen and (min-width: 1200px) {
+    .dropdown-menu {
+        width: 55rem;
+    }
+  }
