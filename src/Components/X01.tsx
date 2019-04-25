@@ -1,4 +1,5 @@
 import * as React from 'react'
+import './X01.scss'
 
 class X01 extends React.Component {
     render() {
@@ -15,7 +16,7 @@ class X01 extends React.Component {
         const legs = legsList.map(leg => { return (<option key={leg + 1} value={leg + 1}>{leg + 1}</option>) })
 
         return (
-            <div className="container">
+            <div className="container x01-form">
                 <h4>X01</h4>
                 <form>
                     <div className="form-input-group">
@@ -53,6 +54,7 @@ class X01 extends React.Component {
                             </select>
                         </div>
                     </div>
+                    <button type="submit" className="btn btn-primary form-control btn-start">Start</button>
                 </form>
             </div>
         )
