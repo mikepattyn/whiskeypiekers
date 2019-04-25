@@ -8,7 +8,7 @@ export class MenuProps {
     links: ILink[] = []
 }
 
-class MijnMenu extends React.Component<MenuProps> {
+class Navigation extends React.Component<MenuProps> {
     render() {
         const trainingDropdownItems = this.props.links.map((link: ILink, index: number) => {
             if(index == 0)
@@ -23,7 +23,10 @@ class MijnMenu extends React.Component<MenuProps> {
             <>
                 <div id="navigation">
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        <a className="navbar-brand" href={this.props.links[0].link}>{this.props.links[0].label}</a>
+                        <a className="navbar-brand" href={this.props.links[0].link}>    
+                            <i className="fas fa-wine-bottle"></i>
+                                {this.props.links[0].label}
+                            </a>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -42,4 +45,4 @@ class MijnMenu extends React.Component<MenuProps> {
     }
 }
 
-export default MijnMenu
+export default Navigation

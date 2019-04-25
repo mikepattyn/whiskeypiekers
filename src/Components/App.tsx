@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import store from './Stores/store'
 
 import Post from './Post'
-import MijnMenu, { MenuProps } from './MijnMenu'
+import Navigation, { MenuProps } from './Navigation'
 import X01 from './X01';
 
 class App extends React.Component {
@@ -15,11 +15,9 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <Provider store={store}>
-                    <>
-                        <MijnMenu links={props.links} />
-                        <Route exact path="/" component={Post} />
-                        <Route exact path="/X01" component={X01} />
-                    </>
+                    <Navigation links={props.links} />
+                    <Route exact path="/" component={Post} />
+                    <Route exact path="/X01" component={X01} />
                 </Provider>
             </BrowserRouter>
         );
