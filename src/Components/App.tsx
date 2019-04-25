@@ -1,20 +1,27 @@
-import * as React from 'react';
-import Posts from './Posts';
-import PostForm from './PostForm';
-import { Provider } from 'react-redux';
-
+import * as React from 'react'
+import { Provider } from 'react-redux'
+import { BrowserRouter, Route } from 'react-router-dom'
 import store from './Stores/store'
+
+import Post from './Post'
+import MijnMenu, { MenuProps } from './MijnMenu'
+import X01 from './X01';
 
 class App extends React.Component {
     render() {
+        const props = new MenuProps()
+        props.links.push({ label: "WHISKEYPIEKERS", link: "/" })
+        props.links.push({ label: "X01", link: "/X01" })
         return (
-            <Provider store={store}>
-                <div>
-                    <PostForm />
-                        <hr />
-                    <Posts posts={[]} />
-                </div>
-            </Provider>
+            <BrowserRouter>
+                <Provider store={store}>
+                    <>
+                        <MijnMenu links={props.links} />
+                        <Route exact path="/" component={Post} />
+                        <Route exact path="/X01" component={X01} />
+                    </>
+                </Provider>
+            </BrowserRouter>
         );
     }
 }
