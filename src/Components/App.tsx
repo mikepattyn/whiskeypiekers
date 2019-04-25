@@ -1,13 +1,22 @@
-import * as React from "react";
-import './App.scss';
-// import  CharacterContainerComponent from "./Character/CharacterContainer";
-export interface AppProps { compiler: string; framework: string; programmer: string; }
+import * as React from 'react';
+import Posts from './Posts';
+import PostForm from './PostForm';
+import { Provider } from 'react-redux';
 
-const App: React.SFC<{}> = () => {
-    return (
-        <div id="test">
-            <h1 className="titleSite">The Force Awakens</h1>
-        </div>
-    )
+import store from './Stores/store'
+
+class App extends React.Component {
+    render() {
+        return (
+            <Provider store={store}>
+                <div>
+                    <PostForm />
+                        <hr />
+                    <Posts posts={[]} />
+                </div>
+            </Provider>
+        );
+    }
 }
-export default App
+
+export default App;
