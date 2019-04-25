@@ -4,7 +4,6 @@ import { createPost } from './Actions/postActions'
 
 interface IPostFormState { title: string, body: string }
 class PostFormState implements IPostFormState {
-    id: number = null
     title: string = "";
     body: string = "";
     constructor(title: string, body: string) {
