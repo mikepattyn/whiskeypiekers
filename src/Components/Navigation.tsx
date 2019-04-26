@@ -14,8 +14,8 @@ class Navigation extends React.Component<MenuProps> {
             if(index == 0)
                 return
             return (
-                <div className="dropdown-menu" aria-labelledby="trainingDropdown">
-                    <a key={index} className="dropdown-item" href={link.link}>{link.label}</a>
+                <div key={index} className="dropdown-menu" aria-labelledby="trainingDropdown">
+                    <a className="dropdown-item" href={link.link}>{link.label}</a>
                 </div>
             )
         })
