@@ -1,7 +1,6 @@
-import { IX01TrainingFormState, IX01Player, IX01Set, IX01Leg, IX01PropsForSelects } from "../../Interfaces/X01";
+import { IX01TrainingFormState, IX01Player, IX01Set, IX01Leg, IX01PropsForSelects, IX01SelectsOptionLists } from "../../Interfaces/X01";
 
 import { CheckOut } from "../Enums/X01";
-import { IListWithDataArrays } from "../../Interfaces/General";
 
 export class X01TrainingFormState implements IX01TrainingFormState {
     step: number = 1
@@ -37,6 +36,14 @@ export class X01Leg implements IX01Leg {
     won: number;
 }
 export class X01PropsForSelects implements IX01PropsForSelects {
-    data: IListWithDataArrays
+    data: IX01SelectsOptionLists
 
+}
+
+export class X01TrainingFormListSelectLists implements IX01SelectsOptionLists {
+    levels: JSX.Element[] | null = []
+    scores: JSX.Element[] = []
+    legs: JSX.Element[] = []
+    sets: JSX.Element[] = []
+    checkouts: JSX.Element[] = []
 }
