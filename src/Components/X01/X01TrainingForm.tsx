@@ -1,8 +1,10 @@
 import * as React from 'react'
+import { IX01SelectsOptionLists } from '../../Interfaces/X01';
 
 
-class X01TrainingForm extends React.Component<any, any> {
-    constructor(props: any){
+
+class X01TrainingForm extends React.Component<IX01SelectsOptionLists, any> {
+    constructor(props: IX01SelectsOptionLists){
         super(props)
         console.log(this.props)
     }
@@ -14,21 +16,21 @@ class X01TrainingForm extends React.Component<any, any> {
                     <div className="form-input-group">
                         <label>Select level</label>
                         <select className="form-control" name="level">
-                            {this.props.props.listData.levels}
+                            {this.props.levels}
                         </select>
                     </div>
                     <br />
                     <div className="form-input-group">
                         <label>Select check-out type</label>
                         <select className="form-control" name="checkOut">
-                        {this.props.props.listData.checkouts}
+                        {this.props.checkouts}
                         </select>
                     </div>
                     <br />
                     <div className="form-input-group">
                         <label>Select score</label>
                         <select className="form-control" name="score" id="scores">
-                        {this.props.props.listData.scores}
+                        {this.props.scores}
                         </select>
                     </div>
                     <br />
@@ -36,13 +38,13 @@ class X01TrainingForm extends React.Component<any, any> {
                         <div className="form-input-group col">
                             <label>Winning Legs</label>
                             <select className="form-control" name="score" id="scores">
-                            {this.props.props.listData.legs}
+                            {this.props.legs}
                             </select>
                         </div>
                         <div className="form-input-group col">
                             <label>Winning Sets</label>
                             <select className="form-control" name="score" id="scores">
-                            {this.props.props.listData.sets}
+                            {this.props.sets}
                             </select>
                         </div>
                     </div>
