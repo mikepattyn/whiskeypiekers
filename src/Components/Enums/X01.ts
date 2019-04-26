@@ -1,0 +1,1 @@
+export enum CheckOut { Double = "Double Out", Masters = "Masters Out", Straight = "Straight Out" }

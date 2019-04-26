@@ -1,20 +1,12 @@
 import * as React from 'react'
-import './X01.scss'
 
-class X01 extends React.Component {
+
+class X01TrainingForm extends React.Component<any, any> {
+    constructor(props: any){
+        super(props)
+        console.log(this.props)
+    }
     render() {
-        const maxScoresList = [301, 401, 501, 601, 701, 801, 901, 1001]
-        const checkOutList = ["Double Out", "Masters Out", "Straight Out"]
-        const levelList = Array.from(Array(15).keys())
-        const setList = Array.from(Array(30).keys())
-        const legsList = Array.from(Array(30).keys())
-
-        const scores = maxScoresList.map((number, index) => { return (<option key={index} value={number}>{number}</option>) })
-        const checkouts = checkOutList.map((number, index) => { return (<option key={index} value={number}>{number}</option>) })
-        const levels = levelList.map(level => { return (<option key={level + 1} value={level + 1}>Level {level + 1}</option>) })
-        const sets = setList.map(set => { return (<option key={set + 1} value={set + 1}>{set + 1}</option>) })
-        const legs = legsList.map(leg => { return (<option key={leg + 1} value={leg + 1}>{leg + 1}</option>) })
-
         return (
             <div className="container x01-form">
                 <h4>X01</h4>
@@ -22,21 +14,21 @@ class X01 extends React.Component {
                     <div className="form-input-group">
                         <label>Select level</label>
                         <select className="form-control" name="level">
-                            {levels}
+                            {this.props.props.listData.levels}
                         </select>
                     </div>
                     <br />
                     <div className="form-input-group">
                         <label>Select check-out type</label>
                         <select className="form-control" name="checkOut">
-                            {checkouts}
+                        {this.props.props.listData.checkouts}
                         </select>
                     </div>
                     <br />
                     <div className="form-input-group">
                         <label>Select score</label>
                         <select className="form-control" name="score" id="scores">
-                            {scores}
+                        {this.props.props.listData.scores}
                         </select>
                     </div>
                     <br />
@@ -44,13 +36,13 @@ class X01 extends React.Component {
                         <div className="form-input-group col">
                             <label>Winning Legs</label>
                             <select className="form-control" name="score" id="scores">
-                                {legs}
+                            {this.props.props.listData.legs}
                             </select>
                         </div>
                         <div className="form-input-group col">
                             <label>Winning Sets</label>
                             <select className="form-control" name="score" id="scores">
-                                {sets}
+                            {this.props.props.listData.sets}
                             </select>
                         </div>
                     </div>
@@ -61,4 +53,4 @@ class X01 extends React.Component {
     }
 }
 
-export default X01
+export default X01TrainingForm

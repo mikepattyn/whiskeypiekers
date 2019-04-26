@@ -1,7 +1,7 @@
 import * as React from 'react'
 import PostForm from './PostForm'
 import Posts from './Posts'
-class Post extends React.Component {
+class PostFrame extends React.Component {
     render() {
         return (
             <div>
@@ -12,4 +12,4 @@ class Post extends React.Component {
         )
     }
 }
-export default Post
+export default PostFrame

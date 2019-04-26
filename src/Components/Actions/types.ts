@@ -1,2 +1,4 @@
 export const FETCH_POSTS = 'FETCH_POSTS'
 export const NEW_POST = 'NEW POST'
+export const START_GAME = 'START_GAME'
+export const FETCH_X01_TRAINING_DATA = 'FETCH_X01_TRAINING_DATA'

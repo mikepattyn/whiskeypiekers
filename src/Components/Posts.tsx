@@ -1,8 +1,11 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { fetchPosts } from '../Components/Actions/postActions'
-interface IAppState {
-    posts: []
+import { fetchPosts } from './Actions/postActions'
+
+export interface IAppState {
+    posts: [],
+    game: {},
+    listData: []
 }
 class Posts extends React.Component<any, IAppState> {
     componentWillMount() {
