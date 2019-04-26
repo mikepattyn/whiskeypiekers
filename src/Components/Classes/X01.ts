@@ -1,6 +1,7 @@
-import { IX01TrainingFormState, IX01Player, IX01Set, IX01Leg } from "../../Interfaces/X01";
+import { IX01TrainingFormState, IX01Player, IX01Set, IX01Leg, IX01PropsForSelects } from "../../Interfaces/X01";
 
 import { CheckOut } from "../Enums/X01";
+import { IListWithDataArrays } from "../../Interfaces/General";
 
 export class X01TrainingFormState implements IX01TrainingFormState {
     step: number = 1
@@ -20,17 +21,22 @@ export class X01TrainingFormState implements IX01TrainingFormState {
 }
 
 export class X01Player implements IX01Player {
-    Name: string;    
-    Score: number;
-    RoundScores: number[];
-    SetsPlayed: IX01Set[];
+    name: string;
+    same: string;    
+    score: number;
+    roundScores: number[];
+    setsPlayed: IX01Set[];
 }
 
 export class X01Set implements IX01Set {
-    Legs: IX01Leg[];
-    Won: number;
+    legs: IX01Leg[];
+    won: number;
 }
 export class X01Leg implements IX01Leg {
-    Scores: number[];
-    Won: number;
+    scores: number[];
+    won: number;
+}
+export class X01PropsForSelects implements IX01PropsForSelects {
+    data: IListWithDataArrays
+
 }
