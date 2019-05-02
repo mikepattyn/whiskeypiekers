@@ -1,58 +1,94 @@
 import * as React from 'react'
-import { IX01SelectsOptionLists } from '../../Interfaces/X01';
+import { connect } from 'react-redux';
+import { startX01Training } from '../Actions/x01Actions';
 
-
-
-class X01TrainingForm extends React.Component<IX01SelectsOptionLists, any> {
-    constructor(props: IX01SelectsOptionLists){
-        super(props)
-        console.log(this.props)
+import X01Step1 from './Steps/1';
+import X01Step2 from './Steps/2';
+import { X01TrainingGame, X01Player, X01Set, X01Leg } from '../Classes/X01';
+import { IX01Player } from '../../Interfaces/X01';
+const X01TrainingState = {
+    step: 1,
+    form: {
+        level: 0,
+        checkout: 0,
+        score: 0,
+        sets: 0,
+        legs: 0
+    },
+    game: {
     }
+}
+class X01TrainingForm extends React.Component<any, any> {
+    constructor(props: {}) {
+        super(props)
+        this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
+        this.state = X01TrainingState
+    }
+    onChange = (event: any) => {
+        let nextState = this.state.form
+        nextState[event.target.name] = event.target.value
+        event.persist()
+        this.setState((prevState: any) => ({
+            ...prevState,
+            form: nextState
+        }));
+    }
+    componentDidUpdate() {
+        if (this.state.step === 1) {
+            let button: HTMLButtonElement = document.getElementById('x01-training-submit-btn') as HTMLButtonElement
+            button.disabled = (Number(this.state.form.level) !== 0 && Number(this.state.form.checkout) !== 0 && Number(this.state.form.score) !== 0 && Number(this.state.form.sets) !== 0 && Number(this.state.form.legs) !== 0) ? false : true
+        } else {
+            console.log("step 2 component updated");
+        }
+    }
+    onSubmit = (event: any) => {
+        event.preventDefault();
+        const names = ["Player 1", "Computer"]
+        const game: X01TrainingGame = new X01TrainingGame()
+        game.level = this.state.form.level
+        game.checkout = this.state.form.checkout
+
+        let players: IX01Player[] = Array<X01Player>()
+        names.forEach((name: string, index: number) => {
+            let player: X01Player = new X01Player()
+            player.name = name
+            player.setsPlayed = []
+            player.roundScores = [0]
+            for (var sets = 0; sets < this.state.form.sets; sets++) {
+                var set = new X01Set()
+                set.legs = []
+                for (var legs = 0; legs < this.state.form.legs; legs++) {
+                    set.legs.push(new X01Leg())
+                }
+                player.setsPlayed.push(set)
+            }
+            players.push(player)
+        })
+        game.players = players
+
+        this.setState((prevState: any) => ({
+            ...prevState,
+            game: {game},
+            step: 2
+        }))
+    }
+
     render() {
-        return (
-            <div className="container x01-form">
-                <h4>X01</h4>
-                <form>
-                    <div className="form-input-group">
-                        <label>Select level</label>
-                        <select className="form-control" name="level">
-                            {this.props.levels}
-                        </select>
-                    </div>
-                    <br />
-                    <div className="form-input-group">
-                        <label>Select check-out type</label>
-                        <select className="form-control" name="checkOut">
-                        {this.props.checkouts}
-                        </select>
-                    </div>
-                    <br />
-                    <div className="form-input-group">
-                        <label>Select score</label>
-                        <select className="form-control" name="score" id="scores">
-                        {this.props.scores}
-                        </select>
-                    </div>
-                    <br />
-                    <div className="form-row">
-                        <div className="form-input-group col">
-                            <label>Winning Legs</label>
-                            <select className="form-control" name="score" id="scores">
-                            {this.props.legs}
-                            </select>
-                        </div>
-                        <div className="form-input-group col">
-                            <label>Winning Sets</label>
-                            <select className="form-control" name="score" id="scores">
-                            {this.props.sets}
-                            </select>
-                        </div>
-                    </div>
-                    <button type="submit" className="btn btn-primary form-control btn-start">Start</button>
-                </form>
-            </div>
-        )
+        switch (this.state.step) {
+            case 1: {
+                return (
+                    <X01Step1 onSubmit={this.onSubmit} onChange={this.onChange} />
+                )
+            }
+            case 2: {
+                return (
+                    <X01Step2 form={this.state.form} game={this.state.game} />
+                )
+            }
+
+        }
     }
 }
 
-export default X01TrainingForm
+export default connect(null, { startX01Training })(X01TrainingForm)

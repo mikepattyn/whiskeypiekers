@@ -1,3 +1,6 @@
+.body {
+    background: black;
+}
 .x01-form {
     h4 {
         text-align: center;
@@ -11,5 +14,86 @@
         padding-left: 0;
         padding-right:0;
         width: calc(100vw - 30px)
+    }
+}
+.x01-training-game {
+    h1 {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+    max-width: 100% !important;
+        @media (max-width: 767px){
+            .flex-row {
+                height: calc(30vh - 54px);
+            }
+            .flex-row:nth-of-type(2) {
+                height: calc(70vh - 54px);
+            }
+        }    
+        @media (min-width: 767px){
+            .flex-row {
+                height: calc(99vh - 84px);
+            }
+        }
+    .flex-row {
+        margin-top: 16px;
+        display: flex;
+        justify-content: space-between;
+        .flex-col {
+            border: 1px solid #999;
+            height: 100%;
+            background: white;
+        }
+        @media (max-width: 767px){
+            .flex-col {
+                width: calc(50% - 8px)
+            }
+        }
+        @media (min-width: 768px){
+            .flex-col {
+                width: calc(32% - 8px);
+            } 
+        }
+    }
+    @media (max-width: 767px){
+        :nth-child(2){
+            .flex-col {
+                width: calc(100%);
+            }
+        }
+    }
+    .flex-col-calc {
+        border: 1px solid #999;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        .calc-row {
+            height: 22%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .calc-col-top {
+                height: 100%;
+                width: calc(33%);
+                background: red;
+            }
+            .calc-col-calc {
+                height: 100%;
+                width: calc(19.6%);
+                background: yellow;
+            }
+            .calc-col-bot {
+                height: 100%;
+                width: calc(33%);
+                background: green;
+            }
+        }
+        .calc-row:nth-of-type(1) {
+            height: 10% !important;
+        }
     }
 }

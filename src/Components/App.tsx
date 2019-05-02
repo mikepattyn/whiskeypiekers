@@ -3,10 +3,9 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
 import store from './Stores/store'
 
-import PostFrame from './PostFrame'
 import Navigation, { MenuProps } from './Navigation'
-import X01Frame  from './X01/X01Frame';
-
+import APP_X01 from './App_X01';
+import './App.scss'
 class App extends React.Component {
     render() {
         const props = new MenuProps()
@@ -16,8 +15,7 @@ class App extends React.Component {
             <BrowserRouter>
                 <Provider store={store}>
                     <Navigation links={props.links} />
-                    <Route exact path="/" component={PostFrame} />
-                    <Route exact path="/X01" component={X01Frame} />
+                    <Route path="/X01" component={APP_X01} />
                 </Provider>
             </BrowserRouter>
         );
