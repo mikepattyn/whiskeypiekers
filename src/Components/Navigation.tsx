@@ -1,4 +1,5 @@
 import * as React from 'react'
+import './Navigation.scss'
 
 interface ILink {
     label: string,
@@ -22,7 +23,7 @@ class Navigation extends React.Component<MenuProps> {
         return (
             <>
                 <div id="navigation">
-                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                    <nav className="navbar navbar-expand-lg navbar-dark bg-dark my-bg-dark">
                         <a className="navbar-brand" href={this.props.links[0].link}>    
                             <i className="fas fa-wine-bottle"></i>
                                 {this.props.links[0].label}

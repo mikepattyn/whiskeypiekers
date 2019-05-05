@@ -9,7 +9,7 @@ class X01Step1 extends React.Component<any, any>{
                 <form onSubmit={this.props.onSubmit}>
                     <div className="form-input-group">
                         <label>Select</label>
-                        <select onChange={this.props.onChange} className="form-control" name="level">
+                        <select defaultValue="1" onChange={this.props.onChange} className="form-control" name="level">
                             <option value="0">Level</option>
                             <option value="1">Level 1</option>
                             <option value="2">Level 2</option>
@@ -21,7 +21,7 @@ class X01Step1 extends React.Component<any, any>{
                     <br />
                     <div className="form-input-group">
                         <label>Select</label>
-                        <select onChange={this.props.onChange} className="form-control" name="checkout">
+                        <select defaultValue="1" onChange={this.props.onChange} className="form-control" name="checkout">
                             <option value="0">Checkout</option>
                             <option value="1">{CheckOut.Double}</option>
                             <option value="2">{CheckOut.Masters}</option>
@@ -31,7 +31,7 @@ class X01Step1 extends React.Component<any, any>{
                     <br />
                     <div className="form-input-group">
                         <label>Select</label>
-                        <select onChange={this.props.onChange} className="form-control" name="score" id="scores">
+                        <select defaultValue="501" onChange={this.props.onChange} className="form-control" name="score" id="scores">
                             <option value="0">Score</option>
                             <option value="301">301</option>
                             <option value="401">401</option>
@@ -42,7 +42,7 @@ class X01Step1 extends React.Component<any, any>{
                     <div className="form-row">
                         <div className="form-input-group col">
                             <label>Winning</label>
-                            <select onChange={this.props.onChange} className="form-control" name="legs" id="scores">
+                            <select defaultValue="3" onChange={this.props.onChange} className="form-control" name="legs" id="scores">
                                 <option value="0">Legs</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -51,7 +51,7 @@ class X01Step1 extends React.Component<any, any>{
                         </div>
                         <div className="form-input-group col">
                             <label>Winning</label>
-                            <select onChange={this.props.onChange} className="form-control" name="sets" id="scores">
+                            <select defaultValue="1" onChange={this.props.onChange} className="form-control" name="sets" id="scores">
                                 <option value="0">Sets</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -59,7 +59,7 @@ class X01Step1 extends React.Component<any, any>{
                             </select>
                         </div>
                     </div>
-                    <button id="x01-training-submit-btn" disabled type="submit" className="btn btn-primary form-control btn-start">Start</button>
+                    <button id="x01-training-submit-btn" type="submit" className="btn btn-primary form-control btn-start">Start</button>
                 </form>
             </div>
         )
