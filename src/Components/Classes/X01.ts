@@ -7,7 +7,7 @@ export class X01TrainingFormState implements IX01TrainingFormState {
     checkout: number = -1
     sets: number = -1
     legs: number = -1
-    players: string[] = ["Player", "Computer"]
+    players: string[] = ["Yves", "Mike"]
     constructor(step: number, level: number, score: number, checkout: number, sets: number, legs: number, player: string){
         this.step = step
         this.level = level

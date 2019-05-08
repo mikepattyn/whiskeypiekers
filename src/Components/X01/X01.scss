@@ -42,7 +42,7 @@
             }
             .flex-row:nth-of-type(1) {
                 .flex-col:nth-of-type(1) {
-                    border-bottom: 5px solid green
+                    border-bottom: 10px solid orange
                 }
             }
             .flex-row:nth-of-type(2) {
@@ -115,6 +115,9 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                span {
+                    padding: 25px
+                }
             }
             .calc-col-bot {
                 height: 100%;
@@ -123,6 +126,9 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                span {
+                    padding: 25px 2px;
+                }
             }
             div span {
                 font-weight: bold;

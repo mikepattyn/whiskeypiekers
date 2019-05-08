@@ -131,11 +131,11 @@ class X01Step2 extends React.Component<any, any> {
         var player1 = playersdiv.children[1] as HTMLDivElement
         if (players[0].name == currentPlayer.name) {
             player.style.borderBottom = "0"
-            player1.style.borderBottom = "5px solid green"
+            player1.style.borderBottom = "10px solid orange"
             return players[1]
         } else {
             var player = playersdiv.children[0] as HTMLDivElement
-            player.style.borderBottom = "5px solid green"
+            player.style.borderBottom = "10px solid orange"
             player1.style.borderBottom = "0"
             return players[0]
         }

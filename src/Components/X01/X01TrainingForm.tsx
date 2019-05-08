@@ -23,6 +23,8 @@ const X01TrainingState = {
     }
 }
 class X01TrainingForm extends React.Component<any, any> {
+    p1 = "Mike"
+    p2 = "Jonas"
     constructor(props: {}) {
         super(props)
         this.onChange = this.onChange.bind(this)
@@ -49,7 +51,7 @@ class X01TrainingForm extends React.Component<any, any> {
     }
     onSubmit = (event: any) => {
         event.preventDefault();
-        const names = ["Player 1", "Computer"]
+        const names = [this.p1, this.p2]
         const game: X01TrainingGame = new X01TrainingGame()
         game.level = this.state.form.level
         game.checkout = this.state.form.checkout
