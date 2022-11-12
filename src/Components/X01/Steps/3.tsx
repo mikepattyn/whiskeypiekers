@@ -5,7 +5,7 @@ class X01Step3 extends React.Component<any, any> {
         var lijst: any = []
 
         console.log(game)
-        var scoreTable: Number[][] = [[501], [501]]
+        var scoreTable: number[][] = [[501], [501]]
         for(var i = 0; i < game.players.length; i++){
             for(var j = 1; j < game.players[i].roundScores.length; j++){
                 scoreTable[i][j] = Number(scoreTable[i][j-1]) -  game.players[i].roundScores[j]
